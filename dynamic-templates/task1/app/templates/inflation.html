@@ -1,4 +1,5 @@
 <!DOCTYPE html>{% load static %}
+
 <html>
   <head>
     <meta charset="UTF-8">
@@ -13,11 +14,187 @@
   </head>
 
   <body>
+    {% load filter %}
     {% block content %}
+
       <div class="row">
         <h1 class="col s12">Инфляция в России</h1>
         <div class="col s12 m8">
-        
+        <table>
+          <trhead>
+            <tr>
+              <td>Год</td>
+              <td>Янв</td>
+              <td>Фев</td>
+              <td>Мар</td>
+              <td>Апр</td>
+              <td>Май</td>
+              <td>Июн</td>
+              <td>Июл</td>
+              <td>Авг</td>
+              <td>Сен</td>
+              <td>Окт</td>
+              <td>Ноя</td>
+              <td>Дек</td>
+              <td>Суммарная</td>
+            </tr>
+          </trhead>
+          <trbody>
+            {% for object in objects %}
+              <tr>
+                  <td>{{ object.Год|str_to_int }}</td>
+                {% if object.Янв|str_to_float < 0 %}
+                  <td style="background-color: green">{{ object.Янв }}</td>
+                {% elif object.Янв|str_to_float > 1 and object.Янв|str_to_float < 2 %}
+                  <td style="background-color: #F5A9A9 ">{{ object.Янв }}</td>
+                {% elif object.Янв|str_to_float > 2 and object.Янв|str_to_float < 5 %}
+                  <td style="background-color: #FA5858 ">{{ object.Янв }}</td>
+                {% elif object.Янв|str_to_float > 5 %}
+                  <td style="background-color: #FF0000 ">{{ object.Янв }}</td>
+                {% else %}
+                  <td>{{ object.Янв }}</td>
+                {% endif %}
+
+
+
+                {% if object.Фев|str_to_float < 0 %}
+                  <td style="background-color: green">{{ object.Фев }}</td>
+                {% elif object.Фев|str_to_float > 1 and object.Фев|str_to_float < 2 %}
+                  <td style="background-color: #F5A9A9 ">{{ object.Фев }}</td>
+                {% elif object.Фев|str_to_float > 2 and object.Фев|str_to_float < 5 %}
+                  <td style="background-color: #FA5858 ">{{ object.Фев }}</td>
+                {% elif object.Фев|str_to_float > 5 %}
+                  <td style="background-color: #FF0000 ">{{ object.Фев }}</td>
+                {% else %}
+                  <td>{{ object.Фев }}</td>
+                {% endif %}
+
+                {% if object.Мар|str_to_float < 0 %}
+                  <td style="background-color: green">{{ object.Мар }}</td>
+                {% elif object.Мар|str_to_float > 1 and object.Мар|str_to_float < 2 %}
+                  <td style="background-color: #F5A9A9 ">{{ object.Мар }}</td>
+                {% elif object.Мар|str_to_float > 2 and object.Мар|str_to_float < 5 %}
+                  <td style="background-color: #FA5858 ">{{ object.Мар }}</td>
+                {% elif object.Мар|str_to_float > 5 %}
+                  <td style="background-color: #FF0000 ">{{ object.Мар }}</td>
+                {% else %}
+                  <td>{{ object.Мар }}</td>
+                {% endif %}
+
+                {% if object.Апр|str_to_float < 0 %}
+                  <td style="background-color: green">{{ object.Апр }}</td>
+                {% elif object.Апр|str_to_float > 1 and object.Апр|str_to_float < 2 %}
+                  <td style="background-color: #F5A9A9 ">{{ object.Апр }}</td>
+                {% elif object.Апр|str_to_float > 2 and object.Фев|str_to_float < 5 %}
+                  <td style="background-color: #FA5858 ">{{ object.Апр }}</td>
+                {% elif object.Апр|str_to_float > 5 %}
+                  <td style="background-color: #FF0000 ">{{ object.Апр }}</td>
+                {% else %}
+                  <td>{{ object.Апр }}</td>
+                {% endif %}
+
+                {% if object.Май|str_to_float < 0 %}
+                  <td style="background-color: green">{{ object.Май }}</td>
+                {% elif object.Май|str_to_float > 1 and object.Май|str_to_float < 2 %}
+                  <td style="background-color: #F5A9A9 ">{{ object.Май }}</td>
+                {% elif object.Май|str_to_float > 2 and object.Май|str_to_float < 5 %}
+                  <td style="background-color: #FA5858 ">{{ object.Май }}</td>
+                {% elif object.Май|str_to_float > 5 %}
+                  <td style="background-color: #FF0000 ">{{ object.Май }}</td>
+                {% else %}
+                  <td>{{ object.Май }}</td>
+                {% endif %}
+
+                {% if object.Июн|str_to_float < 0 %}
+                  <td style="background-color: green">{{ object.Июн }}</td>
+                {% elif object.Июн|str_to_float > 1 and object.Июн|str_to_float < 2 %}
+                  <td style="background-color: #F5A9A9 ">{{ object.Июн }}</td>
+                {% elif object.Июн|str_to_float > 2 and object.Июн|str_to_float < 5 %}
+                  <td style="background-color: #FA5858 ">{{ object.Июн }}</td>
+                {% elif object.Июн|str_to_float > 5 %}
+                  <td style="background-color: #FF0000 ">{{ object.Июн }}</td>
+                {% else %}
+                  <td>{{ object.Июн }}</td>
+                {% endif %}
+
+                {% if object.Июл|str_to_float < 0 %}
+                  <td style="background-color: green">{{ object.Июл }}</td>
+                {% elif object.Июл|str_to_float > 1 and object.Июл|str_to_float < 2 %}
+                  <td style="background-color: #F5A9A9 ">{{ object.Июл }}</td>
+                {% elif object.Июл|str_to_float > 2 and object.Июл|str_to_float < 5 %}
+                  <td style="background-color: #FA5858 ">{{ object.Июл }}</td>
+                {% elif object.Июл|str_to_float > 5 %}
+                  <td style="background-color: #FF0000 ">{{ object.Июл }}</td>
+                {% else %}
+                  <td>{{ object.Июл }}</td>
+                {% endif %}
+
+                {% if object.Авг|str_to_float < 0 %}
+                  <td style="background-color: green">{{ object.Авг }}</td>
+                {% elif object.Авг|str_to_float > 1 and object.Авг|str_to_float < 2 %}
+                  <td style="background-color: #F5A9A9 ">{{ object.Авг }}</td>
+                {% elif object.Авг|str_to_float > 2 and object.Фев|str_to_float < 5 %}
+                  <td style="background-color: #FA5858 ">{{ object.Авг }}</td>
+                {% elif object.Авг|str_to_float > 5 %}
+                  <td style="background-color: #FF0000 ">{{ object.Авг }}</td>
+                {% else %}
+                  <td>{{ object.Авг }}</td>
+                {% endif %}
+
+                {% if object.Сен|str_to_float < 0 %}
+                  <td style="background-color: green">{{ object.Сен }}</td>
+                {% elif object.Сен|str_to_float > 1 and object.Сен|str_to_float < 2 %}
+                  <td style="background-color: #F5A9A9 ">{{ object.Сен }}</td>
+                {% elif object.Сен|str_to_float > 2 and object.Сен|str_to_float < 5 %}
+                  <td style="background-color: #FA5858 ">{{ object.Сен }}</td>
+                {% elif object.Сен|str_to_float > 5 %}
+                  <td style="background-color: #FF0000 ">{{ object.Сен }}</td>
+                {% else %}
+                  <td>{{ object.Сен|str_to_float }}</td>
+                {% endif %}
+
+                {% if object.Окт|str_to_float < 0 %}
+                  <td style="background-color: green">{{ object.Окт }}</td>
+                {% elif object.Окт|str_to_float > 1 and object.Окт|str_to_float < 2 %}
+                  <td style="background-color: #F5A9A9 ">{{ object.Окт }}</td>
+                {% elif object.Окт|str_to_float > 2 and object.Окт|str_to_float < 5 %}
+                  <td style="background-color: #FA5858 ">{{ object.Окт }}</td>
+                {% elif object.Окт|str_to_float > 5 %}
+                  <td style="background-color: #FF0000 ">{{ object.Окт }}</td>
+                {% else %}
+                  <td>{{ object.Окт|str_to_float }}</td>
+                {% endif %}
+
+                {% if object.Ноя|str_to_float < 0 %}
+                  <td style="background-color: green">{{ object.Ноя }}</td>
+                {% elif object.Ноя|str_to_float > 1 and object.Ноя|str_to_float < 2 %}
+                  <td style="background-color: #F5A9A9 ">{{ object.Ноя }}</td>
+                {% elif object.Ноя|str_to_float > 2 and object.Ноя|str_to_float < 5 %}
+                  <td style="background-color: #FA5858 ">{{ object.Ноя }}</td>
+                {% elif object.Ноя|str_to_float > 5 %}
+                  <td style="background-color: #FF0000 ">{{ object.Ноя }}</td>
+                {% else %}
+                  <td>{{ object.Ноя|str_to_float }}</td>
+                {% endif %}
+
+                {% if object.Дек|str_to_float < 0 %}
+                  <td style="background-color: green">{{ object.Дек }}</td>
+                {% elif object.Дек|str_to_float > 1 and object.Дек|str_to_float < 2 %}
+                  <td style="background-color: #F5A9A9 ">{{ object.Дек }}</td>
+                {% elif object.Дек|str_to_float > 2 and object.Дек|str_to_float < 5 %}
+                  <td style="background-color: #FA5858 ">{{ object.Дек }}</td>
+                {% elif object.Дек|str_to_float > 5 %}
+                  <td style="background-color: #FF0000 ">{{ object.Дек }}</td>
+                {% else %}
+                  <td>{{ object.Дек|str_to_float }}</td>
+                {% endif %}
+
+                <td style="background-color: gray ">{{ object.Суммарная|str_to_float }}</td>
+              </tr>
+            {% endfor %}
+
+          </trbody>
+        </table>
         <!-- Ваша логика -->
 
         </div>
