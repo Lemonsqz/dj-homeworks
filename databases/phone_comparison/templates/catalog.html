@@ -6,6 +6,111 @@
     <div class="container">
         <div class="header">
             <h1>Сравнение телефонов</h1>
+            <div class="row">
+                <table class="col-md-4" style="margin-top: 40px">
+                    <tbody>
+
+                        <tr>
+                            <th>Модель</th>
+
+                        </tr>
+                        <tr>
+                            <th>Цена</th>
+                        </tr>
+                        <tr>
+                            <th>Операционная система</th>
+                        </tr>
+                        <tr>
+                            <th>Оперативная память</th>
+                        </tr>
+                        <tr>
+                            <th>Пикселей на дюйм</th>
+                        </tr>
+                        <tr>
+                            <th>Двойная камера</th>
+                        </tr>
+                        <tr>
+                            <th>Процессор</th>
+                        </tr>
+                        <tr>
+                            <th>Разрешение экрана</th>
+                        </tr>
+                        <tr>
+                            <th>Дополнительные опции</th>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <table  class="col-md-4"style="margin-top: 40px">
+                    <tbody>
+
+                        <tr>
+                            <th>{{ options1.model_name }}</th>
+                        </tr>
+                        <tr>
+                            <td>{{ options1.price}}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ options1.os }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ options1.ram }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ options1.ppi }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ options1.d_camera }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ options1.cpu }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ options1.screen }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ sams.compass }}<br>{{ sams.gyroscope }}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <table  class="col-md-4"style="margin-top: 40px">
+                    <tbody>
+
+                        <tr>
+                            <th>{{ options2.model_name }}</th>
+                        </tr>
+                        <tr>
+                            <td>{{ options2.price}}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ options2.os }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ options2.ram }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ options2.ppi }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ options2.d_camera }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ options2.cpu }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ options2.screen }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ xiao.radio }}<br>{{ xiao.recorder }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
         </div>
     </div>
 {% endblock %}

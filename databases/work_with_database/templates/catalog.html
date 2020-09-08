@@ -9,10 +9,36 @@
         </div>
 
         <div class="sort-block">
+            <p>Сортировать по :
+                <a href="?sort=name">по названию  |</a>
+                <a href="?sort=expensive">начать с дорогих  |</a>
+                <a href="?sort=cheap">начать с дешевых  </a>
+            </p>
             {# Здесь должен быть раздел с сортировкой #}
         </div>
 
-        <div class="content">
+        <div class="row">
+
+
+            <div class="col-md-6">
+                <h2>{{ phone1.name }}</h2>
+                <p style="font-weight: bold;">Стоимость : {{ phone1.price }}</p>
+                <img src="{{ phone1.image }}">
+                <br>
+            </div>
+            <div class="col-md-6">
+                <h2>{{ phone2.name }}</h2>
+                <p style="font-weight: bold;">Стоимость : {{ phone2.price }}</p>
+                <img src="{{ phone2.image }}">
+                <br>
+            </div>
+            <div class="col-md-6">
+                <h2>{{ phone3.name }}</h2>
+                <p style="font-weight: bold;">Стоимость : {{ phone3.price }}</p>
+                <img src="{{ phone3.image }}">
+                <br>
+            </div>
+
             {# Здесь должен отображаться каталог с телефонами #}
         </div>
     </div>

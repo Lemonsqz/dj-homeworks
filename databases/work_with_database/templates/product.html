@@ -5,7 +5,21 @@
 {% block content %}
     <div class="container">
         <div class="header">
+
             <h1>Телефон</h1>
+
+
+            <h2>{{ models.name }}</h2>
+            <p style="font-weight: bold;">Стоимость : {{ models.price }}</p>
+            <p>Дата выпуска : {{ models.release_date }}</p>
+            {% if models.lte_exists == True %}
+                <p>Наличие LTE : Присутствует</p>
+            {% else %}
+                <p>Наличие LTE : Отсутствует</p>
+            {% endif %}
+            <img src="{{ models.image }}">
+
+
         </div>
         <div class="content">
 
