@@ -14,3 +14,24 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Section(models.Model):
+    name = models.TextField()
+    articles = models.ManyToManyField(
+        Article,
+        related_name='divs',
+        through='Elements'
+
+    )
+
+    def __str__(self):
+        return self.name
+
+
+class Elements(models.Model):
+    article = models.ForeignKey(Article, on_delete=models.CASCADE,)
+    section = models.ForeignKey(Section, on_delete=models.CASCADE, verbose_name="Раздел")
+
+    general = models.BooleanField(default=False, verbose_name="Основной")
+
